@@ -9,6 +9,11 @@ return Application::configure(basePath: dirname(__DIR__))
         web: __DIR__.'/../routes/web.php',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
+        // Add this line to run router.
+        api:__DIR__.'/../routes/api.php',
+        //? then run this
+        // php artisan route:clear
+        // php artisan route:list --path=api/register
     )
     ->withMiddleware(function (Middleware $middleware): void {
         //
